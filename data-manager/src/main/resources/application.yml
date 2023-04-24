@@ -1,0 +1,29 @@
+server:
+  port: 11001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      connectionErrorRetryAttempts: 0
+      breakAfterAcquireFailure: true
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  main:
+    banner-mode: off
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#logging:
+#  level:
+#    com.excel: debug
+
+pattern:
+  dataFormat: "yyyy-MM-dd:HH:mm:SS"
