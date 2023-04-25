@@ -23,10 +23,9 @@ public class TbJobService {
     }
 
     public List<String> fetchSuggestions(String inputValue, String columnName) {
+        System.out.println(inputValue);
         columnName = JobChineseEnglishFieldTranslator.translate(columnName);
-        List<String> columnValues = jobDao.getColumnValues(columnName);
-        System.out.println(columnValues);
-        return columnValues;
+        return jobDao.getColumnValues(columnName);
     }
 
     public TbJob getJobById(String id) {
@@ -35,5 +34,9 @@ public class TbJobService {
 
     public List<TbJob> getAllJob() {
         return jobDao.list();
+    }
+
+    public List<TbJob> getJobListByPage(Integer currentPage, Integer pageSize) {
+        return jobDao.getJobListByPage(currentPage, pageSize);
     }
 }
