@@ -8,7 +8,6 @@ import com.excel.manager.pojo.TbJob;
 import com.excel.manager.service.TbJobService;
 import com.excel.vojo.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -66,7 +65,7 @@ public class DataManageController {
         try {
             return tbJobService.getJobById(id);
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -74,5 +73,15 @@ public class DataManageController {
     @GetMapping("/getAllJob")
     public List<TbJob> getAllJob() {
         return tbJobService.getAllJob();
+    }
+
+    @GetMapping("/getJobListByPage")
+    public CommonResult getJobListByPage(Integer currentPage, Integer pageSize) {
+        try {
+            return CommonResult.success(tbJobService.getJobListByPage(currentPage, pageSize));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return CommonResult.failure(ResultCode.FAILURE);
+        }
     }
 }
