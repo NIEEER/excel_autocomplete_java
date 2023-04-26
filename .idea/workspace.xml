@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="java-2023-4-24">
+    <list default="true" id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="java-2023-4-26:1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/DataManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/DataManageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,9 +244,50 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="12807ab7-2e55-4d67-bb21-e496127a8029">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -256,7 +298,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="java-2023-4-24" />
-    <option name="LAST_COMMIT_MESSAGE" value="java-2023-4-24" />
+    <MESSAGE value="java-2023-4-26:1" />
+    <option name="LAST_COMMIT_MESSAGE" value="java-2023-4-26:1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

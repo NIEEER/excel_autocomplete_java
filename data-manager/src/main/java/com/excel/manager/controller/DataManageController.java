@@ -36,9 +36,13 @@ public class DataManageController {
     @GetMapping("refreshNow")
     public String now() {
         try {
+            // 从Spring容器中获取到dataSourceConfig、myDruidDataSource对象实例。
             DataSourceConfig dataSourceConfig = (DataSourceConfig) applicationContext.getBean("dataSourceConfig");
             DruidDataSource dataSource = (DruidDataSource) applicationContext.getBean("myDruidDataSource");
+            //FIXME 经初步测试，在生产环境下，此处强行关闭连接池可能会导致一些未知错误，具体错误逻辑待进一步测试
+            // -不做修改，则可通过消息队列进行提前限流处理, 或测试后再作调整
             dataSource.close();
+            // 修改连接池信息后重启连接池
             dataSource.setUrl(dataSourceConfig.getUrl());
             dataSource.setUsername(dataSourceConfig.getUsername());
             dataSource.setPassword(dataSourceConfig.getPassword());
@@ -85,24 +89,27 @@ public class DataManageController {
     public CommonResult getJobListByPage(Integer currentPage, Integer pageSize) {
         try {
             TbJobsPageResult jobsPageResult = tbJobService.getJobListByPage(currentPage, pageSize);
+            // 因为pojo的字段名称为英文，表格的列名为中文。为方便前端解析，此处需对字段名称进行中英映射
             List<TbJob> jobs = jobsPageResult.getJobList();
             List<HashMap<String, String>> mapList = new ArrayList<>();
             for (TbJob job : jobs) {
                 HashMap<String, String> map = new HashMap<>();
+                // 获取对象的字段信息
                 Field[] fields = job.getClass().getDeclaredFields();
+                // 遍历对象所有字段
                 for (Field field : fields) {
-                    if (!field.getName().equals("id")) {
-                        field.setAccessible(true);  // 允许访问私有变量
-                        // 反射拿到字段的名称和值，并把名称映射为中文
-                        try {
-                            map.put(JobEnglishChineseFieldTranslator.translate(field.getName()), field.get(job).toString());
-                        } catch (IllegalArgumentException | NullPointerException ignored) {
-
-                        }
+                    // 对象的字段为私有的，需要将字段名称设置为可访问，否则无法反射获取字段值
+                    field.setAccessible(true);
+                    try {
+                        // 通过反射得到字段的名称和值，并把名称映射为中文
+                        map.put(JobEnglishChineseFieldTranslator.translate(field.getName()), field.get(job).toString());
+                    } catch (IllegalArgumentException | NullPointerException ignored) {
+                        /*字段值可能为null，此处直接跳过不做处理*/
                     }
                 }
                 mapList.add(map);
             }
+            // 对结果进行封装
             TbJobsPageResultView resultView = new TbJobsPageResultView();
             resultView.setTotalPages(jobsPageResult.getTotalPages());
             resultView.setJobList(mapList);
