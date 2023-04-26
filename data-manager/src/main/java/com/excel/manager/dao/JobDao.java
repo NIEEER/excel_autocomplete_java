@@ -7,6 +7,4 @@ import java.util.List;
 
 public interface JobDao extends IService<TbJob> {
     List<String> getColumnValues(String columnName);
-
-    List<TbJob> getJobListByPage(Integer currentPage, Integer pageSize);
 }
