@@ -1,6 +1,7 @@
 package com.excel.manager.controller;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.fastjson.JSON;
 import com.excel.enums.ResultCode;
 import com.excel.manager.config.DataSourceConfig;
 import com.excel.manager.config.PatternProperties;
@@ -8,6 +9,8 @@ import com.excel.manager.pojo.TbJob;
 import com.excel.manager.service.TbJobService;
 import com.excel.manager.vojo.TbJobsPageResult;
 import com.excel.manager.vojo.TbJobsPageResultView;
+import com.excel.util.EntityReflectionUtils;
+import com.excel.util.JobChineseEnglishFieldTranslator;
 import com.excel.util.JobEnglishChineseFieldTranslator;
 import com.excel.vojo.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/dataManager")
@@ -62,6 +66,28 @@ public class DataManageController {
             e.printStackTrace();
             return CommonResult.failure(ResultCode.FAILURE);
         }
+    }
+
+    @PostMapping("/uploadTableData")
+    public CommonResult uploadTableData(@RequestBody String tableData) {
+        Map tableDataMap = JSON.parseObject(tableData, HashMap.class);
+        List<Map<String, String>> mapList = (List<Map<String, String>>) tableDataMap.get("tableData");
+        List<TbJob> jobs = new ArrayList<>();
+        for (Map<String, String> map : mapList) {
+            TbJob job = new TbJob();
+            for (Map.Entry entry : map.entrySet()) {
+                try {
+                    EntityReflectionUtils.setFieldValue(job,
+                            JobChineseEnglishFieldTranslator.translate(entry.getKey().toString()), entry.getValue().toString());
+                } catch (Exception ignored) {
+
+                }
+            }
+            jobs.add(job);
+        }
+        //TODO 此处应发起远过程调用，通知搜索引擎变更数据，在集成消息服务后处理
+        System.out.println(jobs.size());
+        return CommonResult.success();
     }
 
     @GetMapping("/fetchSuggestions")
