@@ -91,24 +91,7 @@ public class DataManageController {
             TbJobsPageResult jobsPageResult = tbJobService.getJobListByPage(currentPage, pageSize);
             // 因为pojo的字段名称为英文，表格的列名为中文。为方便前端解析，此处需对字段名称进行中英映射
             List<TbJob> jobs = jobsPageResult.getJobList();
-            List<HashMap<String, String>> mapList = new ArrayList<>();
-            for (TbJob job : jobs) {
-                HashMap<String, String> map = new HashMap<>();
-                // 获取对象的字段信息
-                Field[] fields = job.getClass().getDeclaredFields();
-                // 遍历对象所有字段
-                for (Field field : fields) {
-                    // 对象的字段为私有的，需要将字段名称设置为可访问，否则无法反射获取字段值
-                    field.setAccessible(true);
-                    try {
-                        // 通过反射得到字段的名称和值，并把名称映射为中文
-                        map.put(JobEnglishChineseFieldTranslator.translate(field.getName()), field.get(job).toString());
-                    } catch (IllegalArgumentException | NullPointerException ignored) {
-                        /*字段值可能为null，此处直接跳过不做处理*/
-                    }
-                }
-                mapList.add(map);
-            }
+            List<HashMap<String, String>> mapList = getTableListMaps(jobs, true);
             // 对结果进行封装
             TbJobsPageResultView resultView = new TbJobsPageResultView();
             resultView.setTotalPages(jobsPageResult.getTotalPages());
@@ -118,5 +101,44 @@ public class DataManageController {
             e.printStackTrace();
             return CommonResult.failure(ResultCode.FAILURE);
         }
+    }
+
+    @GetMapping("/getOneEmptyData")
+    public CommonResult getOneEmptyData() {
+        List<TbJob> jobs = new ArrayList<>();
+        TbJob job = new TbJob();
+        jobs.add(job);
+        List<HashMap<String, String>> mapList = getTableListMaps(jobs, false);
+        // 对结果进行封装
+        TbJobsPageResultView resultView = new TbJobsPageResultView();
+        resultView.setJobList(mapList);
+        return CommonResult.success(resultView);
+    }
+
+    private static List<HashMap<String, String>> getTableListMaps(List<TbJob> jobs, Boolean includeId) {
+        List<HashMap<String, String>> mapList = new ArrayList<>();
+        for (TbJob job : jobs) {
+            HashMap<String, String> map = new HashMap<>();
+            // 获取对象的字段信息
+            Field[] fields = job.getClass().getDeclaredFields();
+            // 遍历对象所有字段
+            for (Field field : fields) {
+                // 对象的字段为私有的，需要将字段名称设置为可访问，否则无法反射获取字段值
+                field.setAccessible(true);
+                try {
+                    // id没有中文字段作为映射
+                    if (includeId && field.getName().equals("id")) {
+                        map.put("id", field.get(job).toString());
+                    } else {
+                        // 通过反射得到字段的名称和值，并把名称映射为中文
+                        map.put(JobEnglishChineseFieldTranslator.translate(field.getName()), field.get(job).toString());
+                    }
+                } catch (IllegalAccessException | NullPointerException ignored) {
+                    /*字段值可能为null，此处直接跳过不做处理*/
+                }
+            }
+            mapList.add(map);
+        }
+        return mapList;
     }
 }

@@ -36,4 +36,35 @@ public class TbJob {
     private String enquiryPhoneOne;
     private String enquiryPhoneTwo;
     private String enquiryPhoneThree;
+
+    public TbJob() {
+        this.id = null;
+        this.departmentCode = "";
+        this.departmentName = "";
+        this.employmentBureau = "";
+        this.characterOfStructure = "";
+        this.recruitmentPosition = "";
+        this.jobAttribute = "";
+        this.jobDistribution = "";
+        this.jobDescription = "";
+        this.jobCode = "";
+        this.hierarchyOfOrganization = "";
+        this.examinationCategory = "";
+        this.numberOfApplicants = "";
+        this.professionalRestriction = "";
+        this.educationBackground = "";
+        this.educationQualification = "";
+        this.politicsStatus = "";
+        this.minimumNumberOfYearsOfGrassRootsWork = "";
+        this.workExperienceInServingGrassrootsProjects = "";
+        this.professionalAptitudeTestsAreOrganizedAtTheInterviewStage = "";
+        this.interviewerRatio = "";
+        this.workplace = "";
+        this.placeOfSettlement = "";
+        this.remarks = "";
+        this.departmentalWebsite = "";
+        this.enquiryPhoneOne = "";
+        this.enquiryPhoneTwo = "";
+        this.enquiryPhoneThree = "";
+    }
 }
