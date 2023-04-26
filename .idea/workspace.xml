@@ -5,76 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="java-2023-4-24">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/excel/util/JobEnglishChineseFieldTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/excel/enums/ResultCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/excel/util/EntityReflectionUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/excel/util/JobChineseEnglishFieldTranslator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/excel/vojo/CommonResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/ChineseUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/impl/ChineseUserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/mapper/ChineseUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/pojo/TbUserTestChinese.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/alibaba/druid/pool/DruidAbstractDataSource$PhysicalConnectionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/alibaba/druid/pool/DruidAbstractDataSource$SynchronousExecutor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/alibaba/druid/pool/DruidAbstractDataSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/DataManageApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/config/DataSourceConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/config/DataSourceWrapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/config/PatternProperties.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/controller/DataManageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/JobDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/impl/JobDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/mapper/JobMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/pojo/TbJob.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/pojo/TbUserTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/service/TbJobService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/util/ExcelUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entrance/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entrance/target/classes/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feign-api/target/classes/com/excel/feign/client/DataManagerClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feign-api/target/classes/com/excel/feign/config/DefaultFeignConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feign-api/target/classes/com/excel/feign/pojo/TbJob.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getway/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getway/target/classes/com/excel/getway/GatewayApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getway/target/classes/com/excel/getway/filter/AuthorizeFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/SearchApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/config/ElasticSearchClientConfig$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/config/ElasticSearchClientConfig$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/config/ElasticSearchClientConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/config/ElasticSearchProperties.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/controller/SearchController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/controller/SearchDataManagerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/service/JobSearchService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/service/SearchDataManagerService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/classes/com/excel/search/util/SearchUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search-service/target/test-classes/com/excel/search/IndexTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/config/DataSourceWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/config/DataSourceWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/config/MybatisConfig.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/vojo/TbJobsPageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/vojo/TbJobsPageResultView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/excel/util/EntityReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/excel/util/EntityReflectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/excel/util/JobEnglishChineseFieldTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/excel/util/JobEnglishChineseFieldTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/excel/util/EntityReflectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/excel/util/EntityReflectionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/DataManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/DataManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/JobDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/impl/JobDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/dao/impl/JobDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/service/TbJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/java/com/excel/manager/service/TbJobService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-manager/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/getway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/src/test/java/com/excel/manager/MybatisUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/src/test/java/com/excel/manager/MybatisUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/config/DataSourceWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/config/DataSourceWrapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/controller/DataManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/controller/DataManageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/JobDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/JobDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/impl/JobDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/dao/impl/JobDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/service/TbJobService.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-manager/target/classes/com/excel/manager/service/TbJobService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/getway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/src/test/java/com/excel/search/IndexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/src/test/java/com/excel/search/IndexTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,11 +92,11 @@
       <recent name="com.excel.manager" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.excel.manager.vojo" />
       <recent name="com.excel.manager.pojo" />
       <recent name="com.excel.util" />
       <recent name="com.alibaba.druid.pool" />
       <recent name="com.excel.search.controller" />
-      <recent name="com.excel.manager.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -158,18 +107,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SearchApplication">
-    <configuration name="IndexTest.testSearchDocument" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="search-service" />
+  <component name="RunManager" selected="JUnit.MybatisUserTest.traversalJobs">
+    <configuration name="MybatisUserTest.traversalJobs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.excel.search.*" />
+          <option name="PATTERN" value="com.excel.manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.excel.search" />
-      <option name="MAIN_CLASS_NAME" value="com.excel.search.IndexTest" />
-      <option name="METHOD_NAME" value="testSearchDocument" />
+      <option name="PACKAGE_NAME" value="com.excel.manager" />
+      <option name="MAIN_CLASS_NAME" value="com.excel.manager.MybatisUserTest" />
+      <option name="METHOD_NAME" value="traversalJobs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,7 +182,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.IndexTest.testSearchDocument" />
+      <item itemvalue="JUnit.MybatisUserTest.traversalJobs" />
       <item itemvalue="Spring Boot.SearchApplication (1)" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.DataManageApplication" />
@@ -242,10 +191,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DataManageApplication" />
+        <item itemvalue="JUnit.MybatisUserTest.traversalJobs" />
         <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.SearchApplication" />
         <item itemvalue="Spring Boot.SearchApplication (1)" />
-        <item itemvalue="JUnit.IndexTest.testSearchDocument" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +232,7 @@
       <workItem from="1682049791135" duration="1260000" />
       <workItem from="1682134864979" duration="613000" />
       <workItem from="1682336924598" duration="1543000" />
-      <workItem from="1682438851141" duration="8251000" />
+      <workItem from="1682438851141" duration="15180000" />
     </task>
     <task id="LOCAL-00001" summary="java-2023-4-24">
       <created>1682337804600</created>
@@ -292,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682337804600</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="java-2023-4-24">
+      <created>1682447143862</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682447143862</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,7 +4,6 @@ package com.excel.search;
 import com.alibaba.fastjson.JSON;
 import com.excel.feign.client.DataManagerClient;
 import com.excel.feign.pojo.TbJob;
-import com.excel.search.config.ElasticSearchClientConfig;
 import com.excel.util.EntityReflectionUtils;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.bulk.BulkRequest;
@@ -29,7 +28,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @SpringBootTest
@@ -48,7 +49,7 @@ public class IndexTest {
         this.client.close();
     }
     @Autowired
-    private ElasticSearchClientConfig esClient;
+    private RestHighLevelClient esClient;
     @Autowired
     DataManagerClient dataManagerClient;
 
@@ -69,7 +70,7 @@ public class IndexTest {
     @Test
     public void testClient() throws IOException {
         GetIndexRequest request = new GetIndexRequest("hotel");
-        boolean exists = esClient.getRestHighLevelClient().indices().exists(request, RequestOptions.DEFAULT);
+        boolean exists = esClient.indices().exists(request, RequestOptions.DEFAULT);
         System.err.println(exists);
     }
 
@@ -79,13 +80,13 @@ public class IndexTest {
         System.out.println(job);
         IndexRequest request = new IndexRequest("job").id(job.getId().toString());
         request.source(JSON.toJSONString(job), XContentType.JSON);
-        esClient.getRestHighLevelClient().index(request, RequestOptions.DEFAULT);
+        esClient.index(request, RequestOptions.DEFAULT);
     }
 
     @Test
     public void testGetDocumentById() throws IOException {
         GetRequest request = new GetRequest("job", "330");
-        GetResponse response = esClient.getRestHighLevelClient().get(request, RequestOptions.DEFAULT);
+        GetResponse response = esClient.get(request, RequestOptions.DEFAULT);
         String res = response.getSourceAsString();
         TbJob job = JSON.parseObject(res, TbJob.class);
         System.out.println(job);
@@ -101,7 +102,7 @@ public class IndexTest {
         request.source().query(QueryBuilders.matchPhrasePrefixQuery(name, text)
                 .slop(1).maxExpansions(50));
         // search
-        SearchResponse searchResponse = esClient.getRestHighLevelClient().search(request, RequestOptions.DEFAULT);
+        SearchResponse searchResponse = esClient.search(request, RequestOptions.DEFAULT);
         List<String> responseList = handelResponse(searchResponse, "employmentBureau");
         System.out.println(responseList);
     }
@@ -109,14 +110,14 @@ public class IndexTest {
     @Test
     public void testDeleteDocument() throws IOException {
         DeleteRequest request = new DeleteRequest("job", "330");
-        esClient.getRestHighLevelClient().delete(request, RequestOptions.DEFAULT);
+        esClient.delete(request, RequestOptions.DEFAULT);
     }
 
     @Test
     public void searchColumnAllValueList() throws IOException {
         SearchRequest request = new SearchRequest("job_match");
         request.source().query(QueryBuilders.matchAllQuery()).fetchSource("characterOfStructure", null);
-        SearchResponse response = esClient.getRestHighLevelClient().search(request, RequestOptions.DEFAULT);
+        SearchResponse response = esClient.search(request, RequestOptions.DEFAULT);
         List<String> stringList = handelResponse(response, "characterOfStructure");
         System.out.println(stringList);
     }
@@ -130,7 +131,7 @@ public class IndexTest {
                     .id(job.getId().toString())
                     .source(JSON.toJSONString(job), XContentType.JSON));
         }
-        esClient.getRestHighLevelClient().bulk(request, RequestOptions.DEFAULT);
+        esClient.bulk(request, RequestOptions.DEFAULT);
     }
 }
 
