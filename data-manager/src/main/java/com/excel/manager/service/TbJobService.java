@@ -3,7 +3,6 @@ package com.excel.manager.service;
 import com.excel.manager.dao.JobDao;
 import com.excel.manager.pojo.TbJob;
 import com.excel.manager.util.ExcelUtil;
-import com.excel.manager.vojo.TbJobsPageResult;
 import com.excel.util.JobChineseEnglishFieldTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ public class TbJobService {
         return jobDao.list();
     }
 
-    public TbJobsPageResult getJobListByPage(Integer currentPage, Integer pageSize) {
+    public List<TbJob> getJobListByPage(Integer currentPage, Integer pageSize) {
         return jobDao.getJobListByPage(currentPage, pageSize);
     }
 }

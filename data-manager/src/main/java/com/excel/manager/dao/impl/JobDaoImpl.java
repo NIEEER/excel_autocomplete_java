@@ -6,12 +6,13 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.excel.manager.dao.JobDao;
 import com.excel.manager.mapper.JobMapper;
 import com.excel.manager.pojo.TbJob;
-import com.excel.manager.vojo.TbJobsPageResult;
 import com.excel.util.EntityReflectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 import static com.excel.util.EntityReflectionUtils.getFieldValue;
 
@@ -35,14 +36,11 @@ public class JobDaoImpl extends ServiceImpl<JobMapper, TbJob> implements JobDao 
     }
 
     @Override
-    public TbJobsPageResult getJobListByPage(Integer currentPage, Integer pageSize) {
+    public List<TbJob> getJobListByPage(Integer currentPage, Integer pageSize) {
         Page<TbJob> page = new Page<>(currentPage, pageSize);
         QueryWrapper<TbJob> queryWrapper = new QueryWrapper<>();
 //        queryWrapper.
         jobMapper.selectPage(page, queryWrapper);
-        TbJobsPageResult jobsPageResult = new TbJobsPageResult();
-        jobsPageResult.setTotalPages(page.getPages());
-        jobsPageResult.setJobList(page.getRecords());
-        return jobsPageResult;
+        return page.getRecords();
     }
 }

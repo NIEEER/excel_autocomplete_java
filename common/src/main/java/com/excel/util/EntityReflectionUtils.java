@@ -23,7 +23,7 @@ public class EntityReflectionUtils {
             Method setMethod = clazz.getDeclaredMethod(methodName, value.getClass());
             setMethod.invoke(object, value);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
+
         }
     }
 

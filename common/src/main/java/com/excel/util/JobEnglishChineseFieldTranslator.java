@@ -36,7 +36,7 @@ public class JobEnglishChineseFieldTranslator {
         fieldMap.put("enquiryPhoneThree", "咨询电话3");
     }
 
-    public static String translate(String englishField) {
-        return fieldMap.get(englishField);
+    public static String translate(String chineseField) {
+        return fieldMap.get(chineseField);
     }
 }

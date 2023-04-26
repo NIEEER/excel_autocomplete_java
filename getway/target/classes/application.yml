@@ -17,7 +17,6 @@ spring:
           uri: lb://datamanager   # 负载均衡
           predicates: # 判断请求是否符合规则
             - Path=/dataManager/**
-
         - id: search-service
           uri: lb://searchservice
           predicates:
