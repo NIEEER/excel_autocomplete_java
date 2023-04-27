@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="java-2023-4-26:3">
+    <list default="true" id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="java-2023-4-21:1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "spring.configuration.checksum": "03301228d3743951669910ce65bace80",
     "vue.rearranger.settings.migration": "true"
   }
@@ -184,6 +185,9 @@
   <component name="SpringBootOptions">
     <option name="showAdditionalConfigNotification" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\rovan\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ad09c02e-1fd7-43cd-8e72-247e04ad5db5" name="Changes" comment="" />
@@ -217,6 +221,7 @@
       <workItem from="1682438851141" duration="15327000" />
       <workItem from="1682538803504" duration="168000" />
       <workItem from="1682573664154" duration="585000" />
+      <workItem from="1682574317083" duration="1035000" />
     </task>
     <task id="LOCAL-00001" summary="java-2023-4-24">
       <created>1682337804600</created>
@@ -260,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682538228593</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="java-2023-4-21:1">
+      <created>1682574585884</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682574585885</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +341,8 @@
     <MESSAGE value="java-2023-4-26:1" />
     <MESSAGE value="java-2023-4-26:2" />
     <MESSAGE value="java-2023-4-26:3" />
-    <option name="LAST_COMMIT_MESSAGE" value="java-2023-4-26:3" />
+    <MESSAGE value="java-2023-4-21:1" />
+    <option name="LAST_COMMIT_MESSAGE" value="java-2023-4-21:1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
